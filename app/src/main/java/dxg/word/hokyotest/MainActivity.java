@@ -105,7 +105,9 @@ public class MainActivity extends AppCompatActivity {
         download_hokyo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.vootflix.app");
+
                 if (launchIntent != null) {
                     startActivity(launchIntent);//null pointer check in case package name was not found
                 }else {
