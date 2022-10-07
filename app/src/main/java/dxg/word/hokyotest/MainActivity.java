@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -104,12 +105,12 @@ public class MainActivity extends AppCompatActivity {
         download_hokyo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.package.address");
+                Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.vootflix.app");
                 if (launchIntent != null) {
                     startActivity(launchIntent);//null pointer check in case package name was not found
                 }else {
                     Intent i = new Intent(android.content.Intent.ACTION_VIEW);
-                    i.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.package.address"));
+                    i.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.vootflix.app"));
                     startActivity(i);
                 }
             }
